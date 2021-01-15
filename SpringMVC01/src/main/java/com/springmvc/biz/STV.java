@@ -1,9 +1,18 @@
 package com.springmvc.biz;
 
+import javax.annotation.Resource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component("sam")
 public class STV implements TV {
 //	SonySpeaker speaker = new SonySpeaker(); //SonySpeaker 객체 생성
 	//스프링 설정파일에 <constructor-arg> 앨리먼트 개수 = 매개변수 개수
-	Speaker speaker;
+	@Autowired
+	@Resource(name="nspeaker")
+	Speaker speaker; //네이버 스피커 객체 생성됨
+	
 	STV(){
 		System.out.println("SamsungTv생성자");
 	}
