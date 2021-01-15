@@ -7,9 +7,16 @@
 <!-- <bean id="tv" class="com.springmvc.biz.STV" init-method="initMethod" destroy-method="destroyMethod" 
 scope="prototype" /> -->
 <!-- sony라는 빈을 만들어주고 class 연결 => 생성자 주입 -->
-<bean id ="tv" class="com.springmvc.biz.STV">
-	<constructor-arg ref="sony"></constructor-arg>
+<bean id ="" class="com.springmvc.biz.STV">
+	<constructor-arg ref="kakao"></constructor-arg>
 </bean>
-<bean id="" class="com.springmvc.biz.LTV" />
+<bean id ="tv" class="com.springmvc.biz.LTV">
+	<constructor-arg ref="kakao"></constructor-arg>
+	<constructor-arg ref="price"></constructor-arg>
+</bean>
+<!-- <bean id="" class="com.springmvc.biz.LTV" /> -->
 <bean id= "sony" class="com.springmvc.biz.SonySpeaker" />
+<bean id= "kakao" class="com.springmvc.biz.KakaoSpeaker" />
+<bean id= "price" class="com.springmvc.biz.Price" />
+
 </beans>

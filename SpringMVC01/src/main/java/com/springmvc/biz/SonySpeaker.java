@@ -1,8 +1,8 @@
 package com.springmvc.biz;
 
-public class SonySpeaker {
+public class SonySpeaker implements Speaker {
 	public SonySpeaker(){
-		System.out.println("==>按眉 积己");
+		System.out.println("==>家聪按眉 积己");
 	}
 	public void volumeUp() {
 		System.out.println("家聪Speaker 杭俘 棵赴促.");

@@ -1,11 +1,13 @@
 package com.springmvc.biz;
 
 public class STV implements TV {
-	SonySpeaker speaker = new SonySpeaker(); //SonySpeaker 객체 생성
+//	SonySpeaker speaker = new SonySpeaker(); //SonySpeaker 객체 생성
+	//스프링 설정파일에 <constructor-arg> 앨리먼트 개수 = 매개변수 개수
+	Speaker speaker;
 	STV(){
 		System.out.println("SamsungTv생성자");
 	}
-	STV(SonySpeaker speaker){
+	STV(Speaker speaker){
 		System.out.println("SamsungTV 생성자-스피커 포함");
 		this.speaker =speaker;
 	}
