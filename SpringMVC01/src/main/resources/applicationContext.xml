@@ -2,7 +2,14 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-<bean id="tv" class="com.springmvc.biz.STV" init-method="initMethod" destroy-method="destroyMethod" />
+<!-- scope에서 singleton은 디폴트값 -->
+<!-- scope에서 prototype으로 설정하면 bean이 요청될 때마다 새로운 객체를 생성해서 반환 -->
+<!-- <bean id="tv" class="com.springmvc.biz.STV" init-method="initMethod" destroy-method="destroyMethod" 
+scope="prototype" /> -->
+<!-- sony라는 빈을 만들어주고 class 연결 => 생성자 주입 -->
+<bean id ="tv" class="com.springmvc.biz.STV">
+	<constructor-arg ref="sony"></constructor-arg>
+</bean>
 <bean id="" class="com.springmvc.biz.LTV" />
+<bean id= "sony" class="com.springmvc.biz.SonySpeaker" />
 </beans>
